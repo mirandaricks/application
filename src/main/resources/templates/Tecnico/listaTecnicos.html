@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Equipamentos</title>
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+	</head>
+
+	<body class="">
+        <!-- Navbar page -->
+		<nav>
+			<div class="nav-wrapper indigo">
+				<a href="#" class="brand-logo">Stock App</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="/">Home</a></li>
+					<li><a href="/retiradas">Retiradas</a></li>
+					<li><a href="/categorias">Categorias</a></li>
+					<li><a href="/tecnicos">Técnicos</a></li>
+					<li><a href="/motivos">Motivos</a></li>
+					<li><a href="/estado_fisico">Estados</a></li>
+					<li><a href="/equipamentos">Equipamentos</a></li>
+				</ul>
+			</div>
+		</nav>
+        <!-- Container table  -->
+		<div class="container grey lighten-3">
+			<h3 class="title-page">Técnicos</h3>
+            <div class="container">
+                <a href="/formTecnico" class="btn btn-small indigo">Novo</a>
+            </div>
+
+			<table class="container responsive-table centered">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Técnico</th>
+						<th>Opções</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Iterar sobre a lista de produtos e exibi-los na tabela -->
+					<tr th:each="tecnico : ${tecnicos}">
+						<td th:text="${tecnico.id}"></td>
+						<td th:text="${tecnico.nome}"></td>
+						<td>
+							<a href="#" class="btn btn-small yellow black-text">Editar</a>
+							<a href="#" class="btn btn-small red">Excluir</a>
+						</td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	</body>
+</html>
